@@ -7,6 +7,7 @@ let myBool = true;
 let myHistory = [];
 const Board = () => {
     // Alan woz here
+    // can alan change another branch?
     const [board, changeBoard] = useState(
         ['', '', '', '', '', '', '', '', '']
     )
