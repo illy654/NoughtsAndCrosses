@@ -7,9 +7,11 @@ let WinnerSign;
 let myBool = true;
 let myHistory = [];
 const Board = () => {
-
+    // Alan woz here
+    // can alan change another branch?
+    // another change
     const [board, changeBoard] = useState(
-        ['', '', '', '', '', '', '', '', '',]
+        ['', '', '', '', '', '', '', '', '']
     )
     const DisplayTheWin = (whoWon) => {
         WinnerSign = <div className="won" id="getRekt"><center><h1> {whoWon} Won! </h1></center></div>
