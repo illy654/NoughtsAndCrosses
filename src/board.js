@@ -1,5 +1,6 @@
 import Tile from "./tile";
 import { useState, useEffect } from 'react';
+// alans causing conflicts!
 let counter = 0;
 let myGo = "True"
 let WinnerSign;
