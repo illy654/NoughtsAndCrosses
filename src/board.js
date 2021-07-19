@@ -8,6 +8,7 @@ let myHistory = [];
 const Board = () => {
     // Alan woz here
     // can alan change another branch?
+    // another change
     const [board, changeBoard] = useState(
         ['', '', '', '', '', '', '', '', '']
     )
