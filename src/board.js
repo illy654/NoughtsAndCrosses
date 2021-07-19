@@ -1,17 +1,17 @@
 import Tile from "./tile";
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
+let counter = 0;
 let myGo = "True"
 let WinnerSign;
-
-let History = [['', '', '', '', '', '', '', '', '',]]
+let myBool = true;
+let myHistory = [];
 const Board = () => {
-    let myHistory = useState(" ")
+
     const [board, changeBoard] = useState(
         ['', '', '', '', '', '', '', '', '',]
     )
     const DisplayTheWin = (whoWon) => {
         WinnerSign = <div className="won" id="getRekt"><center><h1> {whoWon} Won! </h1></center></div>
-        myHistory = useState(History)
     }
     for (let x = 0; x != 3; x++) {
         if (board[3 * x] == board[3 * x + 1] && board[3 * x] == board[3 * x + 2] && board[x * 3] != '') {
@@ -24,11 +24,26 @@ const Board = () => {
             if (board[4] != '') { DisplayTheWin(board[4]) }
         }
     }
-    useEffect(() => {
-        History.push(board)
-    })
-
+    const fastForward = () => {
+        console.log("forward")
+    }
+    const moveBackwards = () => {
+        let temp = myHistory[myHistory.length -1 ]
+        console.log(temp)
+        changeBoard(temp)
+    }
+    if(counter == 1){
+        myBool = false;
+    }
+    counter++
+    if(myHistory[myHistory.length - 1] === board){myBool = false}
+    if(myBool){
+        myHistory.push(board);
+    }
+    myBool = true;    
+    console.log(myHistory)
     return (
+        <div>
         <div className="LesBoard">
             {board.map((tile, index) => {
                 const changeBoardbyIndex = () => {
@@ -40,9 +55,14 @@ const Board = () => {
                 return <div className="tile"><Tile value={tile} changeBoard={changeBoardbyIndex} index={index} /></div>
             })}
             {WinnerSign}
-            
+
         </div>
-        
+
+        <div className="buttons">
+            <button className="backwards" onClick = {fastForward}></button>
+            <button className="backwards" onClick = {moveBackwards}></button>
+        </div>
+        </div>
     );
 
 }

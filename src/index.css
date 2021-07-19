@@ -5,18 +5,20 @@
   margin: 0;
   font-family: "Quicksand";
   color: #333;
+  font-size: 120%;
 }
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 120%;
+  
 }
 
 .Square{
   width:100px;
-  height:100px
+  height:100px;
+  
 }
 
 .Board{
@@ -85,4 +87,22 @@ body {
 .Back{
   width:100px;
   height:100px;
+}
+
+.forward{
+  width:50px;
+  height:50px;
+  background-color: #333;
+  position: fixed;
+  right: 1000px;
+  top:600PX;
+}
+
+.backwards{
+  width:50px;
+  height:50px;
+  background-color: #333;
+  position: fixed;
+  right: 1050px;
+  top:600PX;
 }
